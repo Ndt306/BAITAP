@@ -2,22 +2,18 @@ print("Sinh viên: Ngo Duc Thang")
 print("Ma so Sv: 245751030310019")
 print("########################")
 
-import turtle
+class Circle(object):
+    def __init__(self, r):
+        self.radius = r
 
-window = turtle.Screen()
-window.bgcolor("Lightgreen")
+    def area(self):
+        return self.radius**2*3.14
 
-painter = turtle.Turtle()
-painter.fillcolor('blue')
-painter.pencolor('blue')
-painter.pensize(3)
+aCircle = Circle(6)
+print (aCircle.area())
+ 
+ 
+ 
+ 
+ 
 
-def drawsq(t, s):
-    for i in range(4):
-        t.forward(s)
-        t.left(90)
-
-    for i in range(1,180):
-        painter.left(18)
-        drawsq(painter, 200)
-    
