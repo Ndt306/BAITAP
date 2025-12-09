@@ -2,17 +2,21 @@ print("Sinh viên: Ngo Duc Thang")
 print("Ma so Sv: 245751030310019")
 print("########################")
 
-from tkinter import *
-window = Tk()
-window.title("Welcome to LikeGeeks app")
-window.geometry('350x200')
-
-lbl = Label(window, text="Hello")
-lbl.grid(column=0, row=0)
-
-def clicked():
-    lbl.configure(text="Button was clicked !!")
-btn = Button(window, text="Click Me", command=clicked)
-btn.grid(column=1, row=0)
-window.mainloop()
+class py_solution:
+    def roman_to_int(self, s):
+        rom_val = {'I':1, 'V':5, 'X':10,
+                   'L':50, 'C':100, 'D':500, 'M':1000}
+        int_val = 0
+        for i in range(len(s)):
+            if i>0 and rom_val[s[i]]>rom_val[s[i - 1]]:
+                int_val += rom_val[s[i]] - 2*rom_val[s[i - 1]]
+            else:
+                int_val += rom_val[s[i]]
+        return int_val
+py = py_solution()
+print(py.roman_to_int('MMMCMLXXXVI'))
+print(py.roman_to_int('MMMM'))
+print(py.roman_to_int('C'))
+ 
+ 
 
