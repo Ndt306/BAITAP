@@ -2,11 +2,23 @@ print("Sinh viên: Ngo Duc Thang")
 print("Ma so Sv: 245751030310019")
 print("########################")
 
-x=[1,"python",4,7]
-y=["cse",2,"guntur",8]
-m=[]
-m.append(x)
-m.append(y)
-print(m)
-d={1:1,2:x,"combine_list":m}
-print(d)
+import re
+value = []
+items=[x for x in input("Nhập mật khẩu:").split(',')]
+for p in items:
+    if len(p)<6 or len(p)>12:
+        continue
+    else:
+        pass
+    if not re.search("[a-z]",p):
+        continue
+    elif not re.search("[0-9]",p):
+        continue
+    elif not re.search("[A-Z]",p):
+        continue
+    elif not re.search("[$#@]",p):
+        continue
+    else:
+        pass
+    value.append(p)
+print(",".join(value))
